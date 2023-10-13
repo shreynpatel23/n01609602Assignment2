@@ -10,7 +10,15 @@ namespace n01609602Assignment2.Controllers
     public class DelivEDroidController : ApiController
     {
         /// <summary>
-        /// A Simple Get api to calculate the final score of the Deliv-e-Driod game.
+        /// We have to write to an API to calculate the final score scored in a Delivery app. It consist of two
+        /// parameteres .
+        ///     1. Number of packages delivered
+        ///     2. Number of Obstacles occured.
+        /// You have to calculate the final score based on these conditions
+        ///     • Gain 50 points for every package delivered.
+        ///     • Lose 10 points for every collision with an obstacle.
+        ///     • Earn a bonus 500 points if the number of packages delivered is greater than the number
+        ///       of collisions with obstacles.
         /// </summary>
         /// <param name="numberOfPackagesDelivered">The total number of packages delivered</param>
         /// <param name="numberOfObstacle">the total number of obstacles hit</param>
@@ -22,7 +30,7 @@ namespace n01609602Assignment2.Controllers
         /// </returns>
         [Route("api/calculateFinalScore/{numberOfPackagesDelivered}/{numberOfObstacle}")]
         [HttpGet]
-        public int calculateFinalScore(int numberOfPackagesDelivered, int numberOfObstacle)
+        public int CalculateFinalScore(int numberOfPackagesDelivered, int numberOfObstacle)
         {
             // declare all variables here
             int bonusPoints = 0;
