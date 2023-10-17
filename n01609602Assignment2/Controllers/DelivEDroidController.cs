@@ -14,11 +14,7 @@ namespace n01609602Assignment2.Controllers
         /// parameteres .
         ///     1. Number of packages delivered
         ///     2. Number of Obstacles occured.
-        /// You have to calculate the final score based on these conditions
-        ///     • Gain 50 points for every package delivered.
-        ///     • Lose 10 points for every collision with an obstacle.
-        ///     • Earn a bonus 500 points if the number of packages delivered is greater than the number
-        ///       of collisions with obstacles.
+        /// we have to return the final score based on the number of packages delivered and number of obstacles
         /// </summary>
         /// <param name="numberOfPackagesDelivered">The total number of packages delivered</param>
         /// <param name="numberOfObstacle">the total number of obstacles hit</param>
@@ -45,6 +41,8 @@ namespace n01609602Assignment2.Controllers
 
             // calculate final score by subtracting totalPackageDeliveryCost with totalObstacleCost and adding bonus points
             int finalScore = totalPackageDeliveryCost - totalObstacleCost + bonusPoints;
+
+            // return the final score
             return finalScore;
         }
     }

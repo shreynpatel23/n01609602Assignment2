@@ -14,13 +14,7 @@ namespace n01609602Assignment2.Controllers
         /// It consist of two parameteres .
         ///     1. Total Number of spices added by Ron
         ///     2. Spices list.
-        /// The spices SHU Value is as per this table
-        ///     Poblano  -->  1500
-        ///     Mirasol  -->  6000
-        ///     Serrano  -->  15500
-        ///     Cayenne  -->  40000
-        ///     Thai     -->  75000
-        ///     Habanero -->  125000
+        /// we have to return the total spice count added by Ron
         /// </summary>
         /// <param name="totalNumberOfSpices">total number of spices added by Ron</param>
         /// <param name="spicesList">spices list added by Ron</param>
@@ -35,13 +29,16 @@ namespace n01609602Assignment2.Controllers
         [HttpGet]
         public int CalculateTotalSpiceCount(int totalNumberOfSpices, [FromUri] string[] spicesList)
         {
+            // declare all the variables here
             int totalSpicinessCount = 0;
-            // check if the total number of spices added is less than spices list array length
+
+            // check if the total number of spices added is not equal to spices list array length
             // retun 0 because of invalid input.
             if (totalNumberOfSpices != spicesList.Length)
             {
                 return 0;
             }
+
             // loop through the spices list and use a switch case to calculate the totalSpicinessCount.
             for (int i = 0; i < spicesList.Length; i++)
             {
@@ -71,6 +68,8 @@ namespace n01609602Assignment2.Controllers
                         break;
                 }
             }
+
+            // return the totalSpicinessCount
             return totalSpicinessCount;
         }
     }
